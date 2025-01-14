@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>E-library App</title>
+  </head>
+  <body class="bg-gray-100 font-sans">
+    <div class="max-w-4xl mx-auto p-6">
+      <h1 class="text-4xl font-bold text-center text-red-600 mb-8">
+        Welcome To My E-Library
+      </h1>
+      <div class="text-center mb-6">
+        <a href="/add-book/">
+          <button
+            class="bg-blue-600 text-white py-2 px-6 rounded-lg shadow-lg hover:bg-blue-700 transition duration-300"
+          >
+            Create New Book
+          </button>
+        </a>
+      </div>
+      <div class="space-y-4">
+        {% for book in books %}
+        <div
+          class="flex justify-between items-center bg-white p-4 rounded-lg shadow-md hover:shadow-lg transition duration-300"
+        >
+          <p class="text-lg font-medium text-gray-800">{{ book.title }}</p>
+
+          <div class="space-x-4">
+            <a href="/update/{{ book.title }}/">
+              <button
+                class="bg-lime-500 text-white py-1 px-3 rounded-lg hover:bg-yellow-600 transition duration-300"
+              >
+                Update
+              </button>
+            </a>
+            <a href="/delete/{{ book.id }}/">
+              <button
+                class="bg-red-500 text-white py-1 px-3 rounded-lg hover:bg-red-600 transition duration-300"
+              >
+                Delete
+              </button>
+            </a>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </body>
+</html>
