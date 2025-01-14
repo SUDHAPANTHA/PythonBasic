@@ -5,9 +5,9 @@ from book_app.models import Book
 def book_list(request):
     books = Book.objects.all()
     return render(request,"book_list.html",{"books": books})
-def todo_add_book(request):
+def add_book(request):
     if request.method == "GET":
-        return render(request,"todo_add_book.html")
+        return render(request,"add_book.html")
     else:
         title = request.POST["title"]
         book = Book(title=title)
@@ -26,6 +26,4 @@ def delete_book(request, pk):
     book.delete()
     return HttpResponseRedirect("/")    
 
-
-# Create your views here.
 
