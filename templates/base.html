@@ -6,7 +6,6 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>E-Library</title>
-    <!-- Bootstrap CSS -->
     <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" />
     <link
       rel="stylesheet"
@@ -15,7 +14,6 @@
 
     {% block extra_css %}
     <style>
-      /* Gradient Navbar */
       .navbar {
         background: linear-gradient(to right, #004d99, #33cc33);
       }
@@ -41,8 +39,6 @@
         vertical-align: middle;
         margin-right: 5px;
       }
-
-      /* Card Style */
       .book-card {
         border-radius: 12px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -89,7 +85,6 @@
     {% endblock extra_css %}
   </head>
   <body class="bg-light">
-    <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark">
       <div class="container-fluid">
         <a class="navbar-brand" href="/">E-Library</a>
@@ -131,22 +126,15 @@
         </div>
       </div>
     </nav>
-
-    <!-- Main Content Area -->
     <div class="container mt-5">
       {% block content %}
-      <!-- Dynamic Content Goes Here -->
       {% endblock content %}
     </div>
-
-    <!-- Footer -->
     <footer class="bg-dark text-white py-4">
       <div class="container text-center">
         <p>&copy; 2025 E-Library. All Rights Reserved.</p>
       </div>
     </footer>
-
-    <!-- Bootstrap JS -->
     <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
   </body>
 </html>
