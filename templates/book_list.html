@@ -7,7 +7,7 @@
 
   <!-- Create New Book Button -->
   <div class="text-center mb-5">
-    <a href="{% url 'book-create' %}">
+    <a href="{% url 'create-book' %}">
       <button
         class="btn btn-success btn-lg px-4 py-2 rounded-pill shadow-lg hover-shadow-lg"
       >
@@ -38,10 +38,16 @@
           <h5 class="card-title text-center text-primary">{{ book.title }}</h5>
           <p class="card-text text-center text-muted">By {{ book.author }}</p>
           <div class="d-flex justify-content-between">
-            <a href="" class="btn btn-warning btn-sm px-4">
+            <a
+              href="{% url 'update-book' book.id %}"
+              class="btn btn-warning btn-sm px-4"
+            >
               <span class="material-symbols-outlined">edit</span> Update
             </a>
-            <a href="" class="btn btn-danger btn-sm px-4">
+            <a
+              href="{% url 'delete-book' book.id %}"
+              class="btn btn-danger btn-sm px-4"
+            >
               <span class="material-symbols-outlined">delete</span> Delete
             </a>
           </div>

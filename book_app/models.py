@@ -3,7 +3,7 @@ from django.db import models
 
 class Book(models.Model):
     title = models.CharField(max_length=200)
-    author = models.CharField(max_length=100)
+    author = models.CharField(max_length=256)
     image = models.ImageField(upload_to='books/', null=True, blank=True)  # Optional image field
     description = models.TextField()
     

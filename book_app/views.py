@@ -11,10 +11,10 @@ def book_create(request):
         form = BookForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
-            return redirect('book-list')  # Redirect to book list page
+            return redirect('book-list')
     else:
         form = BookForm()
-    return render(request, 'book_app/book_form.html', {'form': form})
+    return render(request, 'book_app/add_book.html', {'form': form})
 def update_book(request, id):
             book = Book.objects.get(id=id)
             if request.method == "GET": 
